@@ -1,10 +1,8 @@
 # FILE NAME - firewall_traffic_analyzer.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
-
-
+# NAME: Kanna Sugiyama
+# DATE: March 1, 2026 
+# BRIEF DESCRIPTION: A program that considers two pieces of data and makes a risk analysis.
 
 # 1. Make sure you fill out the comments above
 # 2. Write your code in the proper spot
@@ -15,12 +13,26 @@
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
+print("=== Network Traffic Security Analyzer ===")
+print()
+port_number = int(input("Enter the port number (e.g., 80, 22, 443, 3389): "))
+megabyte = int(input("Enter the data transfer size in megabytes (MB): "))
+print()
+print("FIREWALL LOG: ")
+print(f"Port: {port_number}, Transfer Size: {megabyte} MB")
+
+if (port_number == 22 or port_number == 3389) and megabyte >= 100:
+    result = "HIGH RISK: Potential unauthorized remote access detected!"
+elif (port_number == 80) and megabyte >= 100:
+    result = "MEDIUM RISK: Large unencrypted data transfer detected."
+elif port_number == 443:
+    result = "LOW RISK: Secure encrypted transfer detected."
+else:
+    "UNKNOWN: Unrecognized traffic pattern."
 
 
-
-
-
-
+print(f"Risk Assessment: {result}")
+print("------------------------")
 
 
 
@@ -50,10 +62,10 @@ Risk Assessment: MEDIUM RISK: Large unencrypted data transfer detected.
 === Network Traffic Security Analyzer ===
 
 Enter the port number (e.g., 80, 22, 443, 3389): 22
-Enter the data transfer size in megabytes (MB): 12
+Enter the data transfer size in megabytes (MB): 1200
 
 FIREWALL LOG:
-Port: 22, Transfer Size: 12 MB
+Port: 22, Transfer Size: 1200 MB
 Risk Assessment: HIGH RISK: Potential unauthorized remote access detected!
 ------------------------
 '''
@@ -89,8 +101,13 @@ Risk Assessment: UNKNOWN: Unrecognized traffic pattern.
 '''
 
 1. Did you get tripped up using the `or` or `and` operators? If so, how?
+It was a little confusing because I thought `or` and `and` are the same precedence.
+IT was useful to learn that 'and' has higher priority so that I now know that I need parentheses () for 'or'.
 
 
+
+
+'''
 
 
 
